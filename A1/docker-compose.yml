@@ -1,0 +1,11 @@
+version: "3"
+services:
+  nginx: 
+    container_name: nginx-proxy 
+    image: ${ENV_NGINX_IMAGE} 
+    ports: 
+      - "80:80" 
+    environment: 
+      - "TZ:America/Detroit" 
+    volumes:
+      - ${ENV_HTML_FILE}:/var/www/html
